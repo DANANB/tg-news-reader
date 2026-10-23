@@ -1,5 +1,9 @@
 # Changes
 
+## 1.1.1 — build fix
+
+- Fixed image build failure (`addgroup: group 'news' in use`). The Alpine base image already defines a `news` group/user, so the app now runs as a dedicated `tgnews` account.
+
 ## 1.1.0 — configurable sources
 
 - Removed hardcoded Telegram channel usernames from application source code.

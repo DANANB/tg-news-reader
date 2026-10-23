@@ -1,5 +1,5 @@
 name: Telegram Channel Briefings
-version: "1.1.0"
+version: "1.1.1"
 slug: telegram_news
 description: Secure, configurable Telegram channel reader for Home Assistant Assist
 arch:

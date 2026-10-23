@@ -1,6 +1,6 @@
 FROM ghcr.io/home-assistant/base:3.24
 
-ARG BUILD_VERSION=1.1.0
+ARG BUILD_VERSION=1.1.1
 ARG BUILD_ARCH=aarch64
 LABEL io.hass.version="${BUILD_VERSION}" \
       io.hass.type="app" \
@@ -8,7 +8,7 @@ LABEL io.hass.version="${BUILD_VERSION}" \
 
 RUN apk add --no-cache python3 py3-pip su-exec && \
     python3 -m venv /opt/venv && \
-    addgroup -S news && adduser -S -G news -h /nonexistent news
+    addgroup -S tgnews && adduser -S -D -H -G tgnews -h /nonexistent -s /sbin/nologin tgnews
 
 COPY requirements.txt /tmp/requirements.txt
 RUN /opt/venv/bin/pip install --no-cache-dir -r /tmp/requirements.txt && rm /tmp/requirements.txt
