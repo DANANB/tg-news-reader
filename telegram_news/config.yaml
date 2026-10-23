@@ -1,0 +1,35 @@
+name: Telegram Channel Briefings
+version: "1.1.0"
+slug: telegram_news
+description: Secure, configurable Telegram channel reader for Home Assistant Assist
+arch:
+  - aarch64
+init: false
+startup: application
+boot: auto
+ingress: true
+ingress_port: 8099
+panel_admin: true
+panel_icon: mdi:newspaper-variant-outline
+host_network: false
+homeassistant_api: false
+hassio_api: false
+full_access: false
+apparmor: true
+options:
+  api_id: 0
+  api_hash: ""
+  channels: []
+  max_posts_per_channel: 25
+  max_chars_per_post: 800
+  briefing_word_limit: 75
+  deduplicate_stories: true
+schema:
+  api_id: int
+  api_hash: password
+  channels:
+    - str
+  max_posts_per_channel: "int(1,100)"
+  max_chars_per_post: "int(100,2000)"
+  briefing_word_limit: "int(30,200)"
+  deduplicate_stories: bool

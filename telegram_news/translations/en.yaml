@@ -1,0 +1,22 @@
+configuration:
+  api_id:
+    name: Telegram API ID
+    description: Numeric API ID from my.telegram.org
+  api_hash:
+    name: Telegram API Hash
+    description: Keep private; obtained from my.telegram.org
+  channels:
+    name: Public Telegram channels
+    description: Add one username or t.me/s/username URL per entry. Empty is disabled.
+  max_posts_per_channel:
+    name: Max posts per channel per request
+    description: Older posts remain unread if the backlog exceeds this limit.
+  max_chars_per_post:
+    name: Maximum characters per post
+    description: Longer post text is truncated before being sent for summarization.
+  briefing_word_limit:
+    name: Briefing word target
+    description: Suggested maximum word count for the AI summary.
+  deduplicate_stories:
+    name: Combine repeated stories
+    description: Instruct the AI summarizer to merge overlapping channel reports.

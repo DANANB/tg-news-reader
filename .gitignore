@@ -1,0 +1,16 @@
+# Never publish Telegram sessions, local app runtime state or secrets
+*.session
+*.session-journal
+*.session-shm
+*.session-wal
+api_token
+csrf_token
+state.json
+pending.json
+options.json
+secrets.yaml
+.env
+.env.*
+__pycache__/
+*.py[cod]
+.DS_Store

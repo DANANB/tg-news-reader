@@ -1,0 +1,28 @@
+# IMPORTANT: Merge these under your EXISTING top-level rest_command: section
+# in Home Assistant configuration.yaml; do not create duplicate YAML keys.
+# REPLACE APP_HOSTNAME with the add-on's internal hostname (e.g. a0d7b954-telegram-news)
+# from its Home Assistant app details. The hostname is different for each Git repository.
+rest_command:
+  telegram_news_prepare:
+    url: "http://APP_HOSTNAME:8765/prepare"
+    method: POST
+    timeout: 58
+    headers:
+      authorization: !secret telegram_news_bearer
+    content_type: application/json
+    payload: '{}'
+  telegram_news_commit:
+    url: "http://APP_HOSTNAME:8765/commit"
+    method: POST
+    timeout: 15
+    headers:
+      authorization: !secret telegram_news_bearer
+    content_type: application/json
+    payload: >-
+      {{ {'batch_id': batch_id, 'summary': summary} | to_json }}
+  telegram_news_replay:
+    url: "http://APP_HOSTNAME:8765/replay"
+    method: GET
+    timeout: 10
+    headers:
+      authorization: !secret telegram_news_bearer
